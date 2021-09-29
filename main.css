@@ -1,0 +1,640 @@
+@import url(//db.onlinewebfonts.com/c/0923ee644c97a87d70269aa80a6f1e79?family=The+Historia+Demo);
+/*start global*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 10px;
+    font-family: 'Roboto', sans-serif;
+
+}
+body{
+    width: 100%;
+    height: 100%;
+}
+section{
+    padding: 6rem;
+}
+a{
+    text-decoration: none;
+    color:#eee;
+}
+p{
+    font-size:1.8rem ;
+    font-weight: 300;
+}
+img{
+    width: 100%;
+}
+/*end global*/
+
+/*start resuable*/
+.container{
+    width: 90%;
+    max-width: 120rem;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    
+}
+.section-heading{
+    text-align: center;
+    margin-bottom: 10rem;
+}
+.section-heading h1{
+    font-size: 3.5rem;
+    margin-top: 8rem;
+    text-transform: uppercase;
+    color: black;
+    opacity: 0.5;
+    font-weight: 300;
+    position: relative;
+    margin-bottom: 1rem;
+}
+.section-heading h1::before,
+.section-heading h1::after{
+    content: '';
+    position: absolute;
+    bottom: -.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+
+}
+.section-heading h1::before{
+    width: 10rem;
+    height: 3px;
+    border-radius: .8rem;
+}
+.section-heading h1::after  {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 100%;
+    bottom: -1rem;
+}
+.section-heading h6{
+    color: black;;
+    font-size: 1.6rem;
+    font-weight: 300;
+    
+}
+.has-margin-right{
+    margin-right: 5rem;
+}
+/* end resuable*/
+
+/*start header*/
+
+#header{
+    width: 100%;
+    height: 100vh;
+    /*need to change*/
+    position: fixed;
+    z-index: 1000;
+}
+.top-nav{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: -100vh;
+    z-index: 50;
+    transition: all 650ms cubic-bezier(1,0,0,1);
+    
+}
+.nav-list{
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+li{
+    margin: 0 2 rem;
+    padding: 1rem;
+}
+.nav-link{
+     font-family: "The Historia Demo", sans-serif;
+     font-size: 5rem;
+     color: white;
+    padding: 1rem;
+}
+.nav-link:hover,
+.nav-link:focus{
+    background-color: rgba(31, 30, 30, 0.24);
+    color: white;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.top-nav.open{
+    top: 0;
+    border-radius: initial;
+
+}
+.menu-toggler{
+    position: absolute;
+    top: 5rem;
+    left: 5rem;
+    width: 5rem;
+    height: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 1500;
+    transition: transform 650ms ease-out;
+}
+.menu-toggler.open{
+    transform: rotate(-45deg);
+
+}
+.bar{
+    background:linear-gradient(to right, grey , #fff);
+    width: 100%;
+    height: 4px;
+    border-radius: .8rem;
+
+}
+.bar.half{
+    width: 50%;
+
+}
+.bar.start{
+    transform-origin: right;
+    transition: transform 650 cubic-bezier(0.54, -0.81 ,0.57 , 0.57);
+}
+.open .bar.bar.start{
+    transform: rotate(-450deg) translateX(.8rem);
+
+}
+.bar.end{
+    align-self: flex-end;
+    transform-origin: left;
+    transition: transform 650 cubic-bezier(0.54, -0.81 ,0.57 , 0.57);
+}
+.open .bar.bar.end{
+    transform: rotate(-450deg) translateX(-.8rem);
+
+}
+/*end header*/
+
+/*first page*/
+.hero-container{
+    height: 100vh;
+    width: 100%;
+   
+}
+#hero{
+    min-height: 100%;
+    background-image: url(images/laptop_cup_glasses_plant_114948_1920x1080.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+   
+}
+#hero::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height:100% ;
+    width:100% ; 
+}
+
+#hero h1{
+    display: block;
+    width: fit-content;
+    font-size: 7rem;
+    position: relative;
+    font-family: "The Historia Demo", sans-serif;
+    color: transparent;
+    animation: text_reveal .5s ease forwards;
+    animation-delay: 1s;
+}
+#hero h1:nth-child(1){
+    animation-delay: 1s;
+
+}
+#hero h1:nth-child(2){
+    animation-delay: 2s;
+
+}
+#hero h1:nth-child(3){
+    animation-delay: 3s;
+
+}
+#hero h1:nth-child(4){
+    animation-delay: 4s;
+
+}
+#hero h1 span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: rgba(31, 30, 30, 0.24);
+    animation: text_reveal_box 1s ease forwards;
+    animation-delay: .5s;
+}
+#hero h1:nth-child(1) span{
+    animation-delay: .5s;
+}
+#hero h1:nth-child(2) span{
+    animation-delay: 1.5s;
+}
+#hero h1:nth-child(3) span{
+    animation-delay: 2.5s;
+}
+#hero h1:nth-child(4) span{
+   
+    animation-delay: 3.5s;
+}
+
+.para1{
+    margin-top:20rem;
+}
+/*end first page*/
+
+
+/*start about*/
+.about .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10rem;
+}
+.about-heading{
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 0;
+    margin-bottom: 6rem;
+}
+
+.about-heading h1{
+    color: black;
+    opacity: 0.3;
+    font-size: 10rem;
+
+}
+.about-heading h6{
+    font-size: 2rem;
+    font-weight: 300;
+    margin-top: -7rem;
+}
+.profile-img{
+    flex: 1;
+    margin-right: 5rem;
+}
+.about-details{
+    flex: 1;
+}
+.social-media{
+    margin-top: 1rem;
+}
+.social-media i{
+    font-size: 4rem;
+    color: 	#363636;
+    transition: color 650ms;
+}
+fa-envelope:hover{
+    color:  #0e76a8;
+}
+fa-linkedin-in:hover{
+    color:  #0e76a8;
+}
+fa-github:hover{
+    color:  #0e76a8;
+}
+
+/*end about*/
+
+/*start skills*/
+.my-skills{
+    margin-top: 10rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-gap: 2.5rem;
+    text-align: center;
+
+}
+.skill{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+.skill h1{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 2rem -2px 2rem 0;
+}
+.icon-container{
+    width: 10rem;
+    height: 10rem;
+    background-color:#F8F8F8;
+    margin-bottom: 2rem;
+    display: flex;
+    transform:rotate(45deg) ;
+}
+.icon-container i{
+    color: 	#303030;
+    font-size: 6rem;
+    margin: auto;
+    transform: rotate(-45deg);
+
+}
+
+/*end skills*/
+
+/*start services*/
+.portfolio-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5rem;
+
+
+}
+.portfolio-item :last-child{
+    margin-bottom: 0;
+}
+.portfolio-img{
+    width: 50rem;
+    flex: 1;
+
+}
+.portfolio-description h6{
+        font-size: 2rem;
+        text-transform: uppercase;
+        font-weight: 300;
+        opacity: 0.6;
+}
+/*end sevices*/
+
+/*start timeline*/
+.timeline ul{
+    border-left: 3px solid black;
+    border-radius: .8rem;
+    background-color:	#F8F8F8 ;
+    margin: 0 auto;
+    position: relative;
+    padding: 1rem;
+    list-style: none;
+    text-align: left;
+    width: 70% ;
+}
+.timeline h1{
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    opacity: .8;
+}
+.timeline .date{
+    border-bottom: 1px solid 	#C0C0C0;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    position: relative;
+}
+.timeline .date:last-of-type{
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border: none;
+}
+.timeline .date::before,
+.timeline .date::after{
+    position: absolute;
+    display: block;
+    top: 50%;
+    transform: translateY(50%);
+}
+.timeline .date::before{
+    content: attr(data-date);
+    left: -16rem;
+    text-align: right;
+    min-width: 12rem;
+    font-size: 1.5rem;
+    color: black ;
+    opacity: .7;
+}
+.timeline .date::after{
+    content: '';
+   box-shadow: 0 0 0 3px black;
+   border-radius: 100%;
+   left: -2rem;
+   height: 1.5rem;
+   width: 1.5rem;
+   background-color:	#F8F8F8 ;
+}
+.para3{
+    font-size: 1.5rem;
+}
+
+/*end timeline*/
+
+/* start contact*/
+#contact{
+    background-color: 	#F8F8F8;
+    margin-top: 8rem;
+}
+form{
+    
+    width: 70%;
+    margin: 0 auto; 
+}
+form label{
+    font-size: 1.5rem;
+}
+
+input,
+select,
+textarea{
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 5px;
+    border: black;
+    outline-color: black;
+    border: 1px solid #ccc;
+  border-radius: 4px;
+}
+input[type="submit"]{
+    width: initial;
+    background-color: grey;
+    color: white;
+    padding: 1rem 2 rem;
+    border-radius: .8rem;
+    cursor: pointer;
+    transition: background-color 650ms;
+}
+input[type="submit"]:hover{
+    color: black;
+    background-color: white;
+}
+/* end contact*/
+
+/*start footer*/
+.copyright{
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    background-color:	#282828;
+    padding: 2rem 0;
+    position: relative;
+    color: white;
+}
+.up{
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    background-color:	#DCDCDC;
+    top: -2.5rem;
+    right: 5rem;
+    border-radius: 100% ;
+    display: flex;
+    animation: pulse 2s infinite;
+    cursor: pointer;
+    cursor: hand;
+    pointer-events: auto;
+
+}
+.up i{
+    color: black;
+    font-size: 2rem;
+    margin: auto;
+}
+.copyright p{
+    font-size: 1.4rem;
+}
+/*end footer*/
+
+
+
+
+
+@keyframes text_reveal_box{
+    50%{
+        width: 100%;
+        left: 0;
+    }
+    100%{
+        width: 0;
+        left: 100%;
+    }
+}
+
+@keyframes text_reveal{
+    100%{
+        color: white;
+    }
+}
+@keyframes pulse{
+    0%{
+        box-shadow: 0 0 0 0 		rgb(255,255,255,0.99)	;
+
+    }
+    70%{
+        box-shadow: 0 0 0 2rem 			rgb(255,255,255,0);
+    }
+    100%{
+        box-shadow: 0 0 0 0 		rgb(255,255,255,0);
+    }
+}
+
+@media  screen and (max-width: 768px) { 
+    #hero h1{
+        font-size: 6rem;
+    }
+    
+    .nav-list{
+        flex-direction: column;
+    }
+    li{
+        margin: 2rem 0;
+    }
+    .nav-link{
+        font-size: 4.5rem;
+    }
+    .about-heading h1{
+        font-size: 8rem;
+    }
+    .section-heading h1{
+        font-size: 3rem;
+    }
+    .about-details .nav-list{
+        flex-direction: initial;
+    }
+    .about-details li{
+        margin: 0 2rem;
+    }
+    .icon-container{
+        width:7rem ;
+        height:7rem ;
+    }
+    .icon-container i{
+        font-size: 4rem;
+    }
+    .timeline ul{
+        margin: 0 0 0 auto;
+    }
+}
+
+@media  screen and (max-width: 600px) { 
+    #hero h1{
+        font-size: 6rem;
+    }
+    .menu-toggler{
+        top: 2rem;
+        left: 2rem;
+    }
+    
+    .nav-link{
+        font-size: 3.5rem;
+    }
+    .about .container{
+        flex-direction: column;
+    }
+    .about-heading h6{
+       margin-top:-6rem;
+    }
+    .social-media{
+        margin-top: 2rem;
+    }
+    .profile-img{
+        margin: 0 0 2rem 0;
+    }
+    .portfolio-item{
+        flex-direction: column;
+    }
+    .portfolio-img{
+        margin: 0 0 3rem 0;
+        order: 1;
+    }
+    .portfolio-description{
+        margin: 0;
+        order: 2;
+        margin-top: 1rem;
+    }
+    
+    .timeline p{
+        font-size:1.6 ;
+    }
+    .timeline .date::before{
+        font-size: 1.4rem;
+    }
+    form{
+        width: 100%;
+    }
+    .up{
+        right: 2rem;
+    }
+
+}
+
