@@ -213,7 +213,7 @@ li{
     width: fit-content;
     font-size: 7rem;
     position: relative;
-    font-family: 'Brush Script MT', cursive;
+    font-family: 'Dancing Script', cursive;
     color: transparent;
     animation: text_reveal .5s ease forwards;
     animation-delay: 1s;
